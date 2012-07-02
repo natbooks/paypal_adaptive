@@ -88,6 +88,7 @@ module PaypalAdaptive
       api_request_data = JSON.unparse(data) rescue data.to_json
       url = URI.parse @api_base_url
       http = Net::HTTP.new(url.host, 443)
+      http.set_debug_output $stderr
       http.use_ssl = true
       http.verify_mode = OpenSSL::SSL::VERIFY_PEER
 
