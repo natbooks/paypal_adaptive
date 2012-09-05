@@ -17,7 +17,7 @@ module PaypalAdaptive
       url = URI.parse @paypal_base_url
       http = Net::HTTP.new(url.host, 443)
       http.use_ssl = true
-      http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       http.ca_path = "/etc/ssl/certs" #@ssl_cert_path unless @ssl_cert_path.nil?
       
       if @ssl_cert_file
