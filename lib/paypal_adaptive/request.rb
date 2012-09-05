@@ -98,7 +98,7 @@ module PaypalAdaptive
         #http.key = OpenSSL::PKey::RSA.new(cert)
         http.ca_file = @ssl_cert_file
       end
-      http.ca_path = "/etc/ssl/certs" @ssl_cert_path unless @ssl_cert_path.nil?
+      http.ca_path = "/etc/ssl/certs" # @ssl_cert_path unless @ssl_cert_path.nil?
 
       begin
         response_data = http.post(path, api_request_data, @headers)
