@@ -90,8 +90,8 @@ module PaypalAdaptive
       http = Net::HTTP.new(url.host, 443)
       http.set_debug_output $stderr
       http.use_ssl = true
-      http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-
+      #http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       if @ssl_cert_file
         #cert = File.read(@ssl_cert_file)
         #http.cert = OpenSSL::X509::Certificate.new(cert)
