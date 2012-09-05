@@ -27,7 +27,7 @@ module PaypalAdaptive
       else
         pp_env = config['environment'].to_sym
 
-        @ssl_cert_path = nil
+        @ssl_cert_path = "/etc/ssl/certs"
         @ssl_cert_file = nil
         @paypal_base_url = PAYPAL_BASE_URL_MAPPING[pp_env]
         @api_base_url = API_BASE_URL_MAPPING[pp_env]
